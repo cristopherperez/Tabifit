@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+  <!-- bienvenida -->
+    <tabifit-screen id="bienvenida">
+      <main class="elementos">
+        <tabifit-logo></tabifit-logo>
+        <nav class="botones">
+          <tabifit-button id="boton-comenzar">COMENZAR</tabifit-button>
+          <tabifit-button id="boton-repetir-sesion">REPETIR SESION</tabifit-button>
+        </nav>  
+      </main>
+    </tabifit-screen>
+    <!-- seleccionSeries 2 -->
+    <tabifit-screen id="seleccionseries" class="blanco">
+      <section class="contenido-pantalla">
+        <tabifit-titulo>
+          <span slot="primero">¿Cuántas</span>
+          <span slot="resaltado">series</span>
+          <span slot="segundo">vas a hacer?</span>
+        </tabifit-titulo>
+        <tabifit-series>
+          <slot></slot>
+        </tabifit-series>
+        <nav class="botones-nav">
+          <previous-button id="boton-redirigir-bienvenida">
+          </previous-button>
+          <next-button id="boton-redirigir-seleccion-vueltas">
+          </next-button>
+        </nav>  
+      </section>
+    </tabifit-screen> 
+    <!-- seleccionVueltas 3 -->
+    <tabifit-screen id="seleccionvueltas" class="blanco">
+      <section class="contenido-pantalla">
+        <tabifit-titulo>
+          <span slot="primero">¿Cuántas</span>
+          <span slot="resaltado">vueltas</span>
+          <span slot="segundo">vas a hacer?</span>
+        </tabifit-titulo>
+      <lessturns-moreturns>
+        <slot></slot>
+      </lessturns-moreturns>
+      <nav class="botones-nav">
+        <previous-button id="boton-redirigir-seleccion-series"></previous-button>
+        <next-button id="boton-redirigir-ejercicios"></next-button>
+      </nav>
+      </section>
+    </tabifit-screen>
+    <!-- seleccionEjercicios 4 -->
+    <tabifit-screen id="seleccionejercicios" class="blanco">
+      <section class="contenido-pantalla">
+        <tabifit-titulo>
+          <span slot="primero">¿Qué</span>
+          <span slot="resaltado">ejercicios</span>
+          <span slot="segundo">vas a hacer?</span>
+        </tabifit-titulo>
+        <tabifit-exercises id="elegir-ejercicio">
+          <!-- cambiar nombre al contenido a algo q haga referencia a ejercicios -->
+        </tabifit-exercises>
+        <nav class="botones-nav">
+          <previous-button id="boton-redirigir-seleccion-vueltas-dos"></previous-button>
+          <next-button id="boton-redirigir-cuentaregresiva-inicial"></next-button>
+        </nav>
+      </section>
+    </tabifit-screen> 
+  <!-- cuenta regresiva 5 -->
+    <tabifit-screen id="cuentaregresivainicial" class="celeste">
+      <start-countdown id="cuenta-ejercicio">
+      </start-countdown>
+    </tabifit-screen> 
+  <!-- rutina 6 -->
+    <tabifit-screen id="ejercicio" class="azul">
+      <section class="total-container">
+        <aside class="vueltas">
+          <p class="vuelta-serie">VUELTA</p>
+          <hgroup class="contenedor-resultados">
+            <input class="vueltasRealizadas" type="number" value="1" readonly>
+            <p class="barra">/</p>
+            <input class="vueltasPantalla" type="number" value="2" readonly>
+          </hgroup>
+        </aside>
+        <aside class="vueltas">
+          <p class="vuelta-serie">SERIES</p>
+          <hgroup class="contenedor-resultados">
+            <input class="seriesRealizadas" type="number" value="1" readonly>
+            <p class="barra">/</p>
+            <input class="seriesPantalla" type="number" value="6" readonly>
+          </hgroup> 
+        </aside>
+      </section>
+      <!-- porque esta aca?!</div> -->
+      <start-countdown id="cuenta-ejerciciodos">
+      </start-countdown>
+      <footer class="ejercicio-seleccionado">
+        <p id="ejercicioAbs." style="display:none">Abs.</p>
+        <p id="ejercicioSent." style="display:none">Sent.</p>   
+        <p id="ejercicioFlex." style="display:none">Flex.</p>  
+      </footer>
+     </tabifit-screen> 
+    <!-- pausa 7 -->
+    <tabifit-screen id="pausa" class="blanco">
+      <relax-countdown id="cuenta-regresivalatiendo">    
+      </relax-countdown>
+      <p class="mensaje" id="relax"style="display:none">relax</p>
+      <p class="menesaje"id="preparate"style="display:none">preparate</p>
+      <p clasee= "mensaje" id="vamos"style="display:none">vamos</p>
+    </tabifit-screen> 
+      <!-- finalizacion 8 -->
+    <tabifit-screen id="finalizacion" class="celeste">
+      <header class="listo">¡LISTO!</header>
+      <!-- <tabifit-texto><slot><span>¡LISTO!</span></slot></tabifit-texto> -->
+      <tabifit-logo><slot></slot></tabifit-logo>
+      <tabifit-button id="boton-guardaractividad">GUARDAR ACTIVIDAD  </tabifit-button>
+      <tabifit-button id="boton-salir">SALIR</tabifit-button>
+    </tabifit-screen>
+    <!-- seleccionde-archivo 9 -->
+    <tabifit-screen id="selecciondearchivo" class="blanco">
+        <tabifit-titulo>
+          <span slot="primero">Elegí la</span>
+          <span slot="resaltado">sesión</span>
+          <span slot="segundo">a repetir.</span>
+        </tabifit-titulo>
+        <tabifit-button id="boton-comenzar">ABRIR DESDE ARCHIVO</tabifit-button>
+        <nav class="botones-nav">
+          <previous-button id="boton-redirigir-bienvenida-dos">
+          </previous-button>
+          <next-button id="boton-redirigir-verificacionde-entrenamiento">
+          </next-button>
+        </nav>  
+    </tabifit-screen>
+  <!-- verificacion de entrenamiento 10 -->
+  <tabifit-screen id="verificaciondeentrenamiento" class="blanco">
+    <section class="contenido-pantalla">
+      <tabifit-titulo>
+        <span slot="primero">Esta es la</span>
+        <span slot="resaltado">sesión</span>
+        <span slot="segundo">a repetir.</span>
+      </tabifit-titulo>
+      <input class="vueltasPantallaFinal" type="number" value="6" readonly>
+    <!-- <tabifit-texto><span</tabifit-texto> -->
+      <p></p>
+      <nav class="botones-nav">
+        <previous-button id="boton-redirigir-seleccionde-archivo">
+        </previous-button>
+        <next-button id="boton-redirigir-cuentaregresiva-inicial-dos">
+        </next-button>
+      </nav>  
+    </section>
+  </tabifit-screen>
+    
+
+    <template id="start-countdown"><link href="components/start-countdown/start-countdown.css" rel="stylesheet" type="text/css"/>
+      <main class="container">
+        <div class="borde-giratorio"></div>
+        <div class="cuenta-regresiva"></div>
+      </main>  
+        <aside id="preparacion"></div>
+    </template>
+    <template id="lessturns-moreturns"><link href="components/lessturns-moreturns/lessturns-moreturns.css" rel="stylesheet" type="text/css"/>
+    <main class="boton-unidades">
+      <button class="dec">-</button>
+      <input type="number" data-vueltas min="1" max="10" data-afectatotal="true" class=total-vueltas>
+      <button class="inc">+</button>
+    </main>
+    </template>
+    <template id="tabifit-exercises"><link href="components/tabifit-exercises/tabifit-exercises.css" rel="stylesheet" type="text/css"/>
+      <main class="seleccion-ejercicios">
+        <ul>
+          <label class = "contenedor">Abdominales<input data-afectatotalejercicio="true" class="abdominales" type="checkbox"><span class="checkmark"></span></label>
+          <label class = "contenedor">Sentadillas <input data-afectatotalejercicio="true" class="sentadillas" type="checkbox"><span class="checkmark"></span></label>  
+          <label class = "contenedor">Flexiones<input data-afectatotalejercicio="true" class="flexiones" type="checkbox"><span class="checkmark"></span></label>
+        </ul> 
+      </main>
+    </template>  
+    <template id="tabifit-logo"><link href="components/tabifit-logo/tabifit-logo.css" rel="stylesheet" type="text/css"/>
+      <img src="tabifit-log.png">
+    </template>
+    <template id="tabifit-texto"><link href="components/tabifit-texto/tabifit-texto.css" rel="stylesheet" type="text/css"/>
+      <h1>    
+      </h1>
+    </template>
+    <template id="tabifit-button"><link href="components/tabifit-button/tabifit-button.css" rel="stylesheet" type="text/css"/>
+      <button><slot>Comienzo</slot></button>
+    </template>
+    <template id="previous-button"><link href="components/previous-button/previous-button.css" rel="stylesheet" type="text/css"/>
+      <button class="anterior">
+        <img src="anterior.png" alt="">
+      </button>
+    </template>
+    <template id="next-button"><link href="components/next-button/next-button.css" rel="stylesheet" type="text/css"/>
+      <button class="Siguiente">
+        <img src="siguiente.png" alt="">
+      </button>
+    </template>
+    <template id="tabifit-titulo"><link href="components/tabifit-titulo/tabifit-titulo.css" rel="stylesheet" href="">
+      <section>
+        <div class="primero"><slot name="primero">Titulo</slot></div>
+        <div class="resaltado"><slot name="resaltado">Resaltado</slot></div>
+        <div class="segundo"><slot name="segundo">Titulo final</slot></div>
+      </section>
+    </template>
+    <template id="tabifit-screen"><link href="components/tabifit-screen/tabifit-screen.css" rel="stylesheet" href=""></template>
+    <template id="exercise-countdown"><link href="components/exercise-countdown/exercise-countdown.css" rel="stylesheet" href="">
+      <div class="cuenta-regresivaejercicio"></div>
+      <div class="borde-giratorioejercicio"></div>
+    </template>
+    <template id="relax-countdown"><link href="components/relax-countdown/relax-countdown.css" rel="stylesheet" href="">
+      <main class="contenedor">
+        <div class="cuenta-regresiva"></div>
+        <div class="borde-latiendo"></div>
+        <div style="display:none;" class="borde-giratorio"></div>
+        <div class="relax"></div>
+        <div class="preparate"></div>
+        <div class="vamos"></div>
+      </main>
+    </template>
+    <template id="tabifit-series"><link href="components/tabifit-series/tabifit-series.css" rel="stylesheet" href="">
+      <main class="boton-unidades">
+        <button class="menos">-</button>
+        <input type="number" data-series min="1" max="10" data-afectatotal="true" class=total-series>
+        <button class="mas">+</button>
+      </main>
+    </template>
+
+    <script src="tabifit-rutina.js"></script>
+    <script src="navegacion.js"></script>
+    <script src="components/utilities.js"></script>
+    <script src="components/tabifit-logo/tabifit-logo.js"></script>
+    <script src="components/tabifit-texto/tabifit-texto.js"></script>
+    <script src="components/tabifit-titulo/tabifit-titulo.js"></script>
+    <script src="components/relax-countdown/relax-countdown.js"></script>
+    <script src="components/exercise-countdown/exercise-countdown.js"></script>
+    <script src="components/lessturns-moreturns/lessturns-moreturns.js"></script>
+    <script src="components/tabifit-exercises/tabifit-exercises.js"></script>
+    <script src="components/tabifit-button/tabifit-button.js"></script>
+    <script src="components/previous-button/previous-button.js"></script>
+    <script src="components/next-button/next-button.js"></script>
+    <script src="components/lista-tareas/lista-tareas.js"></script>
+    <script src="components/start-countdown/start-countdown.js"></script>
+    <script src="components/tabifit-screen/tabifit-screen.js"></script>
+    <script src="components/tabifit-series/tabifit-series.js"></script>
+  </body>
+</html>

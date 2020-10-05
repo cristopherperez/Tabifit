@@ -1,0 +1,32 @@
+.primero {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+    text-align: left;
+    font: normal normal 900 31px/37px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.resaltado {
+    display: flex;
+    justify-content: center;
+    color: var(--unnamed-color-4ab4dc);
+    text-align: left;
+    font: normal normal 900 108px/130px Roboto;
+    letter-spacing: -7.22px;
+    color: #4AB4DC;
+    opacity: 1;
+}
+
+.segundo {
+    display: flex;
+    justify-content: flex-end;  
+    margin-bottom: 50px;
+    text-align: left;
+    font: normal normal 900 31px/37px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}

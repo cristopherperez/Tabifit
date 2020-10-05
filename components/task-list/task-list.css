@@ -1,0 +1,11 @@
+:hover {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 270px;
+  align-items: space-between;
+}
+
+p {
+  margin: 0;
+}

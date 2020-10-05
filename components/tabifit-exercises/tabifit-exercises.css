@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.seleccion-ejercicios{
+  margin-bottom: 120px;
+}
+
+.contenedor {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  text-align: left;
+  font: normal 600 normal 31px/37px Roboto;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+ul{
+  padding-right: 50px;
+  color: #00C9FF;
+}
+
+.contenedor input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border:solid 1px;
+  border-color: #4AB4DC;
+  border-radius: 50%;
+}
+
+.contenedor:hover .checkmark {
+  background-color: #ccc;
+}
+
+.contenedor input:checked ~ .checkmark {
+  background-color: #53B8DE;
+  
+}
